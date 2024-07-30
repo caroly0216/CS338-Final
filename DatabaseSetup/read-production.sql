@@ -200,3 +200,38 @@ END &&
 DELIMITER ;
 
 CALL update_hot();
+
+-- Multi-Language Support 
+
+-- Create Languages table
+
+CREATE TABLE Languages (
+    LanguageID INT PRIMARY KEY AUTO_INCREMENT,
+    LanguageCode VARCHAR(10) NOT NULL,
+    LanguageName VARCHAR(50) NOT NULL
+);
+
+-- Create Translations table
+CREATE TABLE Translations (
+    TranslationID INT PRIMARY KEY AUTO_INCREMENT,
+    LanguageID INT,
+    OriginalText TEXT NOT NULL,
+    TranslatedText TEXT NOT NULL,
+    FOREIGN KEY (LanguageID) REFERENCES Languages(LanguageID)
+);
+
+-- Populate the Languages table with initial data
+
+INSERT INTO Languages (LanguageCode, LanguageName) VALUES 
+('en', 'English'), 
+('fr', 'French'), 
+('es', 'Spanish');
+
+-- Execute SQL commands to add translations for some sample texts
+
+INSERT INTO Translations (LanguageID, OriginalText, TranslatedText) VALUES
+((SELECT LanguageID FROM Languages WHERE LanguageCode = 'fr'), 'Welcome to our website!', 'Bienvenue sur notre site web!'),
+((SELECT LanguageID FROM Languages WHERE LanguageCode = 'es'), 'Welcome to our website!', '¡Bienvenido a nuestro sitio web!');
+
+
+
