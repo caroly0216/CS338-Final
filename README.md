@@ -44,15 +44,23 @@ Testing Guide
 
 Features:
 
-
-1. Basic search feature (search by exact title and print details).
-2. User login/register.
-3. User history (NEW)
-4. User comment (NEW)
-5. User rating (NEW)
+1. User login/register
+2. Basic search feature (search by exact title and print details)
+3. User history 
+4. User comment
+5. User rating
 6. Movie detailed information (NEW)
 7. The 5 most popular movies in main page (NEW)
-8. Top navigate bar.
+
+==============================================================================================================================
+
+Fancy Features:
+
+1. Smart search (NEW)
+2. Background (NEW)
+3. Dark mode (NEW)
+4. Multi-language
+5. Top Navigate Bar
 
 ==============================================================================================================================
 
